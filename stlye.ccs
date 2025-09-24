@@ -1,0 +1,166 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  color: #FFD700;
+}
+
+.btn-main {
+  display: inline-block;
+  background: #ffcc00;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-main:hover {
+  background: #ffa500;
+}
+
+/* Welcome */
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.welcome-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid #FFD700;
+  animation: neon-rotate 5s linear infinite;
+}
+
+/* Card dengan aura */
+.card {
+  background: #222;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 25px #FFD700;
+  animation: aura 3s infinite alternate;
+}
+@keyframes aura {
+  0% {
+    box-shadow: 0 0 15px #FFD700, 0 0 30px #FFA500, 0 0 45px #FFD700;
+  }
+  100% {
+    box-shadow: 0 0 25px #FFA500, 0 0 50px #FFD700, 0 0 75px #FFA500;
+  }
+}
+.logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #FFD700;
+  margin-bottom: 10px;
+}
+.qr-img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Section Dana */
+.section {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  text-align: center;
+}
+.label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ffcc00;
+}
+.number-box {
+  background: #333;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.name {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* Kontak Admin */
+.contact {
+  margin-top: 25px;
+}
+.contact h3 {
+  margin-bottom: 10px;
+}
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #222;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 0 10px #FFD700;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.contact-links a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px #FFA500, 0 0 28px #FFD700;
+}
+.contact-links img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Catatan */
+.note {
+  font-size: 13px;
+  color: #bbb;
+  margin-top: 20px;
+}
+
+/* Animasi Fade */
+.fade-section {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.fade-section.show {
+  opacity: 1;
+}
+
+/* Neon RGB muter-muter */
+@keyframes neon-rotate {
+  0% { box-shadow: 0 0 15px red; transform: rotate(0deg); }
+  25% { box-shadow: 0 0 15px blue; }
+  50% { box-shadow: 0 0 15px lime; transform: rotate(180deg); }
+  75% { box-shadow: 0 0 15px cyan; }
+  100% { box-shadow: 0 0 15px magenta; transform: rotate(360deg); }
+}

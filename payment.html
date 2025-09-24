@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Sanz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Audio -->
+  <audio id="bg-music" autoplay loop>
+    <source src="https://files.catbox.moe/j5imch.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Halaman Welcome -->
+  <div id="welcome-section" class="fade-section show">
+    <div class="welcome-container">
+      <img src="https://files.catbox.moe/zzg86t.jpg" alt="Welcome Logo" class="welcome-img">
+      <h1>Selamat datang di Payment SANZ OFFICIAL</h1>
+      <button class="btn-main" onclick="showPayment()">💳 Lanjutkan ke Payment</button>
+    </div>
+  </div>
+
+  <!-- Halaman Payment -->
+  <div id="payment-section" class="fade-section" style="display:none;">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="https://files.catbox.moe/e0m42k.jpg" alt="Logo SANZ">
+    </div>
+    <h2>PAYMENT SANZ</h2>
+
+    <!-- Card -->
+    <div class="card">
+      <h3>QRIS SANZ</h3>
+      <img src="https://files.catbox.moe/iph45h.jpg" alt="QRIS Sanz" class="qr-img">
+      <a href="https://files.catbox.moe/iph45h.jpg" download class="btn-main">⬇️ Download QRIS</a>
+
+      <div class="section">
+        <div class="label">DANA</div>
+        <div class="number-box">0857-1890-6011</div>
+        <div class="name">Atas Nama: Ahmad Yusuf</div>
+        <button class="btn-main" onclick="copyNumber()">📋 Salin Nomor</button>
+      </div>
+    </div>
+
+    <!-- Contact Admin -->
+    <div class="contact">
+      <h3>📞 Contact Admin</h3>
+      <div class="contact-links">
+        <a href="https://wa.me/6285718906011" target="_blank">
+          <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WA"> WhatsApp
+        </a>
+        <a href="https://t.me/SanzNotDev" target="_blank">
+          <img src="https://img.icons8.com/color/48/telegram-app--v1.png" alt="Telegram"> Telegram
+        </a>
+      </div>
+    </div>
+
+    <p class="note">
+      📌 Tekan lama gambar jika ingin simpan ke galeri<br>
+      📌 Setelah transfer, kirim bukti ke admin
+    </p>
+  </div>
+
+  <script>
+    function showPayment() {
+      const welcome = document.getElementById("welcome-section");
+      const payment = document.getElementById("payment-section");
+
+      welcome.classList.remove("show");
+      setTimeout(() => {
+        welcome.style.display = "none";
+        payment.style.display = "block";
+        setTimeout(() => {
+          payment.classList.add("show");
+        }, 50);
+      }, 1000);
+
+      document.getElementById("bg-music").play();
+    }
+
+    function copyNumber() {
+      const nomor = "085718906011"; 
+      navigator.clipboard.writeText(nomor).then(() => {
+        alert("✅ Nomor berhasil disalin: " + nomor);
+      });
+    }
+  </script>
+
+</body>
+</html>
